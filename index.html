@@ -99,4 +99,71 @@
         <div class="card-title">視線1</div>
         <div class="button-group">
             <button class="btn btn-true" onclick="clickBtn('box1', 'true')">見ない</button>
-            <button class="btn btn-false" onclick="clickBtn('box1', 'false')">見る
+            <button class="btn btn-false" onclick="clickBtn('box1', 'false')">見る</button>
+        </div>
+    </div>
+
+    <div class="card" id="box2">
+        <div class="card-title">ほのお</div>
+        <div class="button-group">
+            <button class="btn btn-true" onclick="clickBtn('box2', 'true')">ステイ</button>
+            <button class="btn btn-false" onclick="clickBtn('box2', 'false')">離れる</button>
+        </div>
+    </div>
+
+    <div class="card" id="box3">
+        <div class="card-title">視線2</div>
+        <div class="button-group">
+            <button class="btn btn-true" onclick="clickBtn('box3', 'true')">見ない</button>
+            <button class="btn btn-false" onclick="clickBtn('box3', 'false')">見る</button>
+        </div>
+    </div>
+
+    <div class="card" id="box4">
+        <div class="card-title">つなみ</div>
+        <div class="button-group">
+            <button class="btn btn-true" onclick="clickBtn('box4', 'true')">ステイ</button>
+            <button class="btn btn-false" onclick="clickBtn('box4', 'false')">離れる</button>
+        </div>
+    </div>
+
+    <div class="card" id="box5">
+        <div class="card-title">水/雷</div>
+        <div class="button-group">
+            <button class="btn btn-true" onclick="clickBtn('box5', 'true')">頭割り</button>
+            <button class="btn btn-false" onclick="clickBtn('box5', 'false')">散開</button>
+        </div>
+    </div>
+
+    <div class="card" id="box6">
+        <div class="card-title">加速度</div>
+        <div class="button-group">
+            <button class="btn btn-true" onclick="clickBtn('box6', 'true')">動かない</button>
+            <button class="btn btn-false" onclick="clickBtn('box6', 'false')">動く</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function clickBtn(targetId, type) {
+        var card = document.getElementById(targetId);
+        if (!card) return;
+
+        var targetClass = 'card state-' + type;
+        if (card.className === targetClass) {
+            card.className = 'card';
+        } else {
+            card.className = targetClass;
+        }
+    }
+
+    function resetAll() {
+        var cards = document.getElementsByClassName('card');
+        for (var i = 0; i < cards.length; i++) {
+            cards[i].className = 'card';
+        }
+    }
+</script>
+</body>
+</html>
