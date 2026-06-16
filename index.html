@@ -37,36 +37,46 @@
         cursor: pointer;
     }
 
-    /* 【修正】全体の余白を削り、高さを約2/3に圧縮 */
+    /* 【修正】横並び（左タイトル、右ボタン）に変更してさらにコンパクト化 */
     .card {
         background-color: #242424;
         border-radius: 6px;
-        padding: 8px 12px;
-        margin-bottom: 8px;
+        padding: 6px 12px;
+        margin-bottom: 6px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.5);
         border: 2px solid transparent;
         transition: all 0.15s;
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
     }
+    
+    /* タイトルの幅を固定してボタンの開始位置を縦に揃える */
     .card-title {
         font-weight: bold;
         font-size: 0.95rem;
-        margin-bottom: 6px;
         color: #ddd;
+        flex: 0 0 75px; 
+        white-space: nowrap;
     }
     
     .button-group {
         display: flex;
         gap: 8px;
+        flex: 1;
     }
     .btn {
         flex: 1;
-        padding: 6px;
+        padding: 8px 6px;
         border: none;
         border-radius: 4px;
         font-weight: bold;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         cursor: pointer;
         opacity: 0.5;
+        white-space: nowrap;
     }
     .btn-true { background-color: #28a745; color: white; }
     .btn-false { background-color: #dc3545; color: white; }
@@ -139,7 +149,7 @@
         <div class="card-title">雷</div>
         <div class="button-group">
             <button class="btn btn-true" onclick="clickBtn('box6', 'true')">散開</button>
-            <button class="btn btn-false" onclick="clickBtn('box7', 'false')">頭割り</button>
+            <button class="btn btn-false" onclick="clickBtn('box6', 'false')">頭割り</button>
         </div>
     </div>
     
@@ -148,6 +158,22 @@
         <div class="button-group">
             <button class="btn btn-true" onclick="clickBtn('box7', 'true')">動かない</button>
             <button class="btn btn-false" onclick="clickBtn('box7', 'false')">動く</button>
+        </div>
+    </div>
+
+    <div class="card" id="box8">
+        <div class="card-title">サンダガ</div>
+        <div class="button-group">
+            <button class="btn btn-true" onclick="clickBtn('box8', 'true')">踏まない</button>
+            <button class="btn btn-false" onclick="clickBtn('box8', 'false')">踏む</button>
+        </div>
+    </div>
+
+    <div class="card" id="box9">
+        <div class="card-title">ブリザガ</div>
+        <div class="button-group">
+            <button class="btn btn-true" onclick="clickBtn('box9', 'true')">踏まない</button>
+            <button class="btn btn-false" onclick="clickBtn('box9', 'false')">踏む</button>
         </div>
     </div>
 
